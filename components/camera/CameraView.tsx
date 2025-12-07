@@ -71,13 +71,11 @@ export default function CameraViewComponent() {
       if (status === 'granted') {
         const loc = await Location.getCurrentPositionAsync({});
         setLocation(loc);
-        const [address] = await Location.reverseGeocodeAsync({
-          latitude: loc.coords.latitude,
-          longitude: loc.coords.longitude,
-        });
-        if (address) {
-          setLocationName(`${address.city || address.region}, ${address.country}`);
-        }
+        // reverseGeocodeAsync was removed in SDK 49+
+        // Display coordinates as fallback
+        const lat = loc.coords.latitude.toFixed(4);
+        const lon = loc.coords.longitude.toFixed(4);
+        setLocationName(`${lat}°, ${lon}°`);
       }
     })();
   }, []);
