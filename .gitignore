@@ -39,3 +39,9 @@ app-example
 
 **/tempobook/dynamic/
 **/tempobook/storyboards/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
