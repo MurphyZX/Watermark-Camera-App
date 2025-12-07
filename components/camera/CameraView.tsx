@@ -88,10 +88,10 @@ export default function CameraViewComponent() {
     
     switch (preset) {
       case 'location':
-        text = locationName || 'Location unavailable';
+        text = locationName || '位置不可用';
         break;
       case 'datetime':
-        text = now.toLocaleString('en-US', {
+        text = now.toLocaleString('zh-CN', {
           month: 'short',
           day: 'numeric',
           year: 'numeric',
@@ -100,13 +100,13 @@ export default function CameraViewComponent() {
         });
         break;
       case 'weather':
-        text = `${locationName || 'Unknown'} • 22°C`;
+        text = `${locationName || '未知'} • 22°C`;
         break;
       case 'custom':
-        text = 'Your text here';
+        text = '在此输入文字';
         break;
       case 'logo':
-        text = '📷 WATERMARK';
+        text = '📷 水印';
         break;
       default:
         text = '';
@@ -151,7 +151,7 @@ export default function CameraViewComponent() {
   if (!permission) {
     return (
       <View className="flex-1 bg-charcoal items-center justify-center">
-        <Text className="text-offwhite text-lg">Loading...</Text>
+        <Text className="text-offwhite text-lg">加载中...</Text>
       </View>
     );
   }
@@ -161,17 +161,17 @@ export default function CameraViewComponent() {
       <View className="flex-1 bg-charcoal items-center justify-center px-8">
         <Camera size={64} color="#C7F464" />
         <Text className="text-offwhite text-xl font-bold mt-6 text-center">
-          Camera Access Required
+          需要相机权限
         </Text>
         <Text className="text-gray-400 text-center mt-2 mb-6">
-          We need camera access to capture photos with watermarks
+          我们需要相机权限来拍摄带水印的照片
         </Text>
         <TouchableOpacity
           onPress={requestPermission}
           className="bg-lime px-8 py-4 rounded-none border-4 border-black"
           style={styles.brutalistButton}
         >
-          <Text className="text-black font-bold text-lg">Grant Permission</Text>
+          <Text className="text-black font-bold text-lg">授予权限</Text>
         </TouchableOpacity>
       </View>
     );

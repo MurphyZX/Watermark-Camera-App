@@ -52,7 +52,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
         <BlurView intensity={90} tint="dark" style={styles.blurContainer}>
           {/* Header */}
           <View style={styles.header}>
-            <Text style={styles.headerTitle}>Edit Watermark</Text>
+            <Text style={styles.headerTitle}>编辑水印</Text>
             <TouchableOpacity onPress={onClose} style={styles.closeButton}>
               <X size={24} color="#F8F9FA" />
             </TouchableOpacity>
@@ -66,7 +66,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
             >
               <Type size={18} color={activeTab === 'text' ? '#C7F464' : '#888'} />
               <Text style={[styles.tabLabel, activeTab === 'text' && styles.tabLabelActive]}>
-                Text
+                文字
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -75,7 +75,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
             >
               <Palette size={18} color={activeTab === 'style' ? '#C7F464' : '#888'} />
               <Text style={[styles.tabLabel, activeTab === 'style' && styles.tabLabelActive]}>
-                Style
+                样式
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -84,7 +84,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
             >
               <Layers size={18} color={activeTab === 'effects' ? '#C7F464' : '#888'} />
               <Text style={[styles.tabLabel, activeTab === 'effects' && styles.tabLabelActive]}>
-                Effects
+                效果
               </Text>
             </TouchableOpacity>
           </View>
@@ -93,12 +93,12 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
           <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
             {activeTab === 'text' && (
               <View style={styles.section}>
-                <Text style={styles.sectionTitle}>Custom Text</Text>
+                <Text style={styles.sectionTitle}>自定义文字</Text>
                 <TextInput
                   style={styles.textInput}
                   value={config.text}
                   onChangeText={(text) => updateConfig({ text })}
-                  placeholder="Enter watermark text..."
+                  placeholder="输入水印文字..."
                   placeholderTextColor="#666"
                   multiline
                 />
@@ -108,7 +108,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
             {activeTab === 'style' && (
               <>
                 <View style={styles.section}>
-                  <Text style={styles.sectionTitle}>Color</Text>
+                  <Text style={styles.sectionTitle}>颜色</Text>
                   <View style={styles.colorGrid}>
                     {colors.map((color) => (
                       <TouchableOpacity
@@ -125,7 +125,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
                 </View>
 
                 <View style={styles.section}>
-                  <Text style={styles.sectionTitle}>Font Size</Text>
+                  <Text style={styles.sectionTitle}>字体大小</Text>
                   <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                     <View style={styles.sizeGrid}>
                       {fontSizes.map((size) => (
@@ -152,7 +152,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
                 </View>
 
                 <View style={styles.section}>
-                  <Text style={styles.sectionTitle}>Opacity</Text>
+                  <Text style={styles.sectionTitle}>透明度</Text>
                   <View style={styles.opacityRow}>
                     {[0.25, 0.5, 0.75, 1].map((opacity) => (
                       <TouchableOpacity
@@ -181,7 +181,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
             {activeTab === 'effects' && (
               <>
                 <View style={styles.section}>
-                  <Text style={styles.sectionTitle}>Rotation</Text>
+                  <Text style={styles.sectionTitle}>旋转</Text>
                   <View style={styles.rotationRow}>
                     {[0, -15, -30, -45, 15, 30, 45].map((rotation) => (
                       <TouchableOpacity
@@ -211,7 +211,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
                 </View>
 
                 <View style={styles.section}>
-                  <Text style={styles.sectionTitle}>Effects</Text>
+                  <Text style={styles.sectionTitle}>特效</Text>
                   <View style={styles.effectsRow}>
                     <TouchableOpacity
                       style={[styles.effectButton, config.hasStroke && styles.effectButtonActive]}
@@ -223,7 +223,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
                           config.hasStroke && styles.effectButtonTextActive,
                         ]}
                       >
-                        Stroke
+                        描边
                       </Text>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -236,7 +236,7 @@ export default function EditorPanel({ config, onConfigChange, onClose }: EditorP
                           config.hasShadow && styles.effectButtonTextActive,
                         ]}
                       >
-                        Shadow
+                        阴影
                       </Text>
                     </TouchableOpacity>
                   </View>

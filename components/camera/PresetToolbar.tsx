@@ -10,11 +10,11 @@ interface PresetToolbarProps {
 }
 
 const presets: { id: WatermarkPreset; label: string; icon: React.ReactNode }[] = [
-  { id: 'location', label: 'Location', icon: <MapPin size={18} color="#F8F9FA" /> },
-  { id: 'datetime', label: 'Date/Time', icon: <Calendar size={18} color="#F8F9FA" /> },
-  { id: 'weather', label: 'Weather', icon: <Cloud size={18} color="#F8F9FA" /> },
-  { id: 'custom', label: 'Custom', icon: <Type size={18} color="#F8F9FA" /> },
-  { id: 'logo', label: 'Logo', icon: <Stamp size={18} color="#F8F9FA" /> },
+  { id: 'location', label: '位置', icon: <MapPin size={18} color="#F8F9FA" /> },
+  { id: 'datetime', label: '日期时间', icon: <Calendar size={18} color="#F8F9FA" /> },
+  { id: 'weather', label: '天气', icon: <Cloud size={18} color="#F8F9FA" /> },
+  { id: 'custom', label: '自定义', icon: <Type size={18} color="#F8F9FA" /> },
+  { id: 'logo', label: '标志', icon: <Stamp size={18} color="#F8F9FA" /> },
 ];
 
 export default function PresetToolbar({ selectedPreset, onSelectPreset }: PresetToolbarProps) {
